@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./backend
+    container_name: devsecops-backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    container_name: devsecops-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
